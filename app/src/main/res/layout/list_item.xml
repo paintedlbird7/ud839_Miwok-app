@@ -12,13 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="lutti"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+
         />
 
     <TextView
         android:id="@+id/default_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="one"
+        tools:text="numbers"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="30dp"
 
         />
 
