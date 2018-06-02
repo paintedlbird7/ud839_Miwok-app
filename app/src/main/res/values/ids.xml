@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="rootView" type="id" />
+    <item name="list" type="id" />
+    <item name="wordlist" type="id" />
+</resources>

@@ -1,10 +1,8 @@
 package com.example.android.miwok;
 
-import android.app.Activity;
-
 /**
- * Created by rosaperez on 5/18/18.
+ * Created by rosaperez on 6/2/18.
  */
 
-public class FamilyMembers extends Activity {
+public class FamilyMembers {
 }
