@@ -15,6 +15,7 @@ public class NumbersActivity extends AppCompatActivity {
 
     private Object android;
     private ListAdapter adapter;
+    private ListAdapter itemsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class NumbersActivity extends AppCompatActivity {
         // Make the {@link ListView} use the
         // {@link ListView} will display
 
-        listView.setAdapter(adapter);
+        listView.setAdapter(itemsAdapter);
 
     }
 
