@@ -2,7 +2,6 @@ package com.example.android.miwok;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -35,7 +34,7 @@ public class NumbersActivity extends AppCompatActivity {
         // Create a new {@link TextView}
         // adapter knows how to create
         //WordAdapter itemsAdapter = new WordAdapter(this,words);
-        ArrayAdapter adapter = new WordAdapter(this,words);
+        WordAdapter itemsAdapter = new WordAdapter(this,words);
 
         //ArrayAdapter itemsAdapter = new ArrayAdapter();
         //WordAdapter itemsAdapter = new WordAdapter();
