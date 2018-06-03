@@ -34,7 +34,11 @@ public class NumbersActivity extends AppCompatActivity {
 
         // Create a new {@link TextView}
         // adapter knows how to create
+        //WordAdapter itemsAdapter = new WordAdapter(this,words);
         ArrayAdapter adapter = new WordAdapter(this,words);
+
+        //ArrayAdapter itemsAdapter = new ArrayAdapter();
+        //WordAdapter itemsAdapter = new WordAdapter();
 
         // Find the {@link ListView} object in the
         // There should be a {@link ListView}
