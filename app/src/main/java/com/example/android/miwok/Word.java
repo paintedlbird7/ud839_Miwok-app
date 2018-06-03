@@ -22,5 +22,11 @@ public class Word {
     public String getmMiwokTranslation() {
         return mMiwokTranslation;
     }
+
+
+    public String getMiwokTranslation() {
+        return mMiwokTranslation;
+
+    }
 }
 

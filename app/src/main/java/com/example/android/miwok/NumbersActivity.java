@@ -24,7 +24,6 @@ public class NumbersActivity extends AppCompatActivity {
         // Create an array of words
         // words.add("one");
         ArrayList<Word> words = new ArrayList<Word>();
-
         words.add(new Word("one", "lutti"));
         words.add(new Word("two", "otiiko"));
         words.add(new Word("three", "tolookosu"));
@@ -34,8 +33,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         // Create a new {@link TextView}
         // adapter knows how to create
-        ArrayAdapter<Word> itemsAdapter =
-                new ArrayAdapter<Word>(this, R.layout.list_item, words);
+        ArrayAdapter adapter = new WordAdapter(this,words);
 
         // Find the {@link ListView} object in the
         // There should be a {@link ListView}
