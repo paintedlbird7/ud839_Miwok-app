@@ -10,5 +10,5 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:id="@+id/list"
-    tools:context="com.example.android.miwok.NumbersActivity"/>
+    />
 

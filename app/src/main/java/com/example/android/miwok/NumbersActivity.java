@@ -19,7 +19,7 @@ public class NumbersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_numbers);
+        setContentView(layout.word_list);
 
         // Create an array of words
         // words.add("one");
@@ -41,7 +41,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         // Find the {@link ListView} object in the
         // There should be a {@link ListView}
-        // activity_numbers.xml layout
+        // word_listyout
         ListView listView = (ListView) findViewById(R.id.list);
 
 
