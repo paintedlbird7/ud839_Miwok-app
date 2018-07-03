@@ -16,17 +16,18 @@ public class ColorsActivity extends AppCompatActivity {
         // Create an array of words
         // words.add("one");
         ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("red", "wetetti"));
-        words.add(new Word("black", "kululli"));
-        words.add(new Word("white", "kelelli"));
-        words.add(new Word("green", "chokokki"));
-        words.add(new Word("brown", "takaakki"));
+        words.add(new Word("red", "wetetti", R.drawable.color_red));
+
+//        words.add(new Word("black", "kululli", imageResourceId));
+//        words.add(new Word("white", "kelelli", imageResourceId));
+//        words.add(new Word("green", "chokokki", imageResourceId));
+//        words.add(new Word("brown", "takaakki", imageResourceId));
 
 
         // Create a new {@link TextView}
         // adapter knows how to create
         //WordAdapter itemsAdapter = new WordAdapter(this,words);
-        WordAdapter itemsAdapter = new WordAdapter(this,words);
+        WordAdapter itemsAdapter = new WordAdapter(this,words, R.color.category_numbers);
 
         //ArrayAdapter itemsAdapter = new ArrayAdapter();
         //WordAdapter itemsAdapter = new WordAdapter();

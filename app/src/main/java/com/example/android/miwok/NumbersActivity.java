@@ -24,17 +24,17 @@ public class NumbersActivity extends AppCompatActivity {
         // Create an array of words
         // words.add("one");
         ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("one", "lutti"));
-        words.add(new Word("two", "otiiko"));
-        words.add(new Word("three", "tolookosu"));
-        words.add(new Word("four", "oyyisa"));
-        words.add(new Word("five", "massokka"));
+        words.add(new Word("one", "lutti", R.drawable.number_one));
+//        words.add(new Word("two", "otiiko", imageResourceId));
+//        words.add(new Word("three", "tolookosu", imageResourceId));
+//        words.add(new Word("four", "oyyisa", imageResourceId));
+//        words.add(new Word("five", "massokka", imageResourceId));
 
 
         // Create a new {@link TextView}
         // adapter knows how to create
         //WordAdapter itemsAdapter = new WordAdapter(this,words);
-        WordAdapter itemsAdapter = new WordAdapter(this,words);
+        WordAdapter itemsAdapter = new WordAdapter(this, words, R.color.category_numbers);
 
         //ArrayAdapter itemsAdapter = new ArrayAdapter();
         //WordAdapter itemsAdapter = new WordAdapter();

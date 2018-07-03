@@ -16,17 +16,17 @@ public class FamilyActivity extends AppCompatActivity {
         // Create an array of words
         // words.add("one");
         ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("father", "әpә"));
-        words.add(new Word("mother", "әṭa"));
-        words.add(new Word("son", "angsi"));
-        words.add(new Word("daughter", "tune"));
-        words.add(new Word("grandmother", "ama"));
+        words.add(new Word("father", "әpә", R.drawable.family_father));
+//        words.add(new Word("mother", "әṭa", imageResourceId));
+//        words.add(new Word("son", "angsi", imageResourceId));
+//        words.add(new Word("daughter", "tune", imageResourceId));
+//        words.add(new Word("grandmother", "ama", imageResourceId));
 
 
         // Create a new {@link TextView}
         // adapter knows how to create
         //WordAdapter itemsAdapter = new WordAdapter(this,words);
-        WordAdapter itemsAdapter = new WordAdapter(this,words);
+        WordAdapter itemsAdapter = new WordAdapter(this,words, R.color.category_numbers);
 
         //ArrayAdapter itemsAdapter = new ArrayAdapter();
         //WordAdapter itemsAdapter = new WordAdapter();
