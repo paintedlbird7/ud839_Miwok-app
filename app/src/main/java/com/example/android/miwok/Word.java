@@ -1,6 +1,6 @@
 package com.example.android.miwok;
 
-import static android.icu.text.Normalizer.NO;
+//import static android.icu.text.Normalizer.NO;
 
 /**
  * Created by rosaperez on 6/1/18.
@@ -13,7 +13,7 @@ public class Word {
 
     private String mMiwokTranslation;
 
-    private int mImageResourceId;
+    //private int mImageResourceId;
 
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 

@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
 
+    private int imageResourceId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,7 +18,9 @@ public class PhrasesActivity extends AppCompatActivity {
         // Create an array of words
         // words.add("one");
         ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("What is your name?", "innә oyaase'nә",));
+        words.add(new Word("father", "әpә", R.drawable.family_father));
+
+        words.add(new Word("What is your name?", "innә oyaase'nә",imageResourceId));
 //        words.add(new Word("My name is..", "michәksәs?", imageResourceId));
 //        words.add(new Word("I’m feeling good.", "kuchi achit", imageResourceId));
 //        words.add(new Word("Are you coming?", "әәnәs'aa?", imageResourceId));
