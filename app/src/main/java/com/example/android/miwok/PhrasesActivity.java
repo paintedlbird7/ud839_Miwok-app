@@ -18,7 +18,6 @@ public class PhrasesActivity extends AppCompatActivity {
         // Create an array of words
         // words.add("one");
         ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("father", "әpә", R.drawable.family_father));
 
         words.add(new Word("What is your name?", "innә oyaase'nә",imageResourceId));
 //        words.add(new Word("My name is..", "michәksәs?", imageResourceId));
