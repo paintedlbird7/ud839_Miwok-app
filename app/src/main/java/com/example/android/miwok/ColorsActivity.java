@@ -17,11 +17,10 @@ public class ColorsActivity extends AppCompatActivity {
         // words.add("one");
         ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("red", "wetetti", R.drawable.color_red));
-
-//        words.add(new Word("black", "kululli", imageResourceId));
-//        words.add(new Word("white", "kelelli", imageResourceId));
-//        words.add(new Word("green", "chokokki", imageResourceId));
-//        words.add(new Word("brown", "takaakki", imageResourceId));
+        words.add(new Word("black", "kululli",  R.drawable.color_black));
+        words.add(new Word("white", "kelelli",  R.drawable.color_brown));
+        words.add(new Word("green", "chokokki",  R.drawable.color_white));
+        words.add(new Word("brown", "takaakki",  R.drawable.color_gray));
 
 
         // Create a new {@link TextView}

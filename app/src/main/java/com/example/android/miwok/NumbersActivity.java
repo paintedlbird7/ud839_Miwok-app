@@ -25,10 +25,10 @@ public class NumbersActivity extends AppCompatActivity {
         // words.add("one");
         ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("one", "lutti", R.drawable.number_one));
-//        words.add(new Word("two", "otiiko", imageResourceId));
-//        words.add(new Word("three", "tolookosu", imageResourceId));
-//        words.add(new Word("four", "oyyisa", imageResourceId));
-//        words.add(new Word("five", "massokka", imageResourceId));
+        words.add(new Word("two", "otiiko", R.drawable.number_two));
+        words.add(new Word("three", "tolookosu", R.drawable.number_three));
+        words.add(new Word("four", "oyyisa", R.drawable.number_four));
+        words.add(new Word("five", "massokka", R.drawable.number_five));
 
 
         // Create a new {@link TextView}

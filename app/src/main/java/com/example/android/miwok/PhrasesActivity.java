@@ -20,10 +20,10 @@ public class PhrasesActivity extends AppCompatActivity {
         ArrayList<Word> words = new ArrayList<Word>();
 
         words.add(new Word("What is your name?", "innә oyaase'nә",imageResourceId));
-//        words.add(new Word("My name is..", "michәksәs?", imageResourceId));
-//        words.add(new Word("I’m feeling good.", "kuchi achit", imageResourceId));
-//        words.add(new Word("Are you coming?", "әәnәs'aa?", imageResourceId));
-//        words.add(new Word("Let’s go", "yoowutis", imageResourceId));
+        words.add(new Word("My name is..", "michәksәs?", imageResourceId));
+        words.add(new Word("I’m feeling good.", "kuchi achit", imageResourceId));
+        words.add(new Word("Are you coming?", "әәnәs'aa?", imageResourceId));
+        words.add(new Word("Let’s go", "yoowutis", imageResourceId));
 
 
         // Create a new {@link TextView}
