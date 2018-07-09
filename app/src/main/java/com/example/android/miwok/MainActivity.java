@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
         //Find the View that shows the family category
         TextView family = (TextView) findViewById(R.id.family);
 
@@ -69,7 +67,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //Find the View that shows the family category
+
+
+
+
+        //Find the View that shows the color category
         TextView color = (TextView) findViewById(R.id.colors);
 
         //Set a clickListener on that View
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                // Create a new intent to open the {@link FamilyActivity}
+                // Create a new intent to open the {@link ColorsActivity}
                 Intent colorIntent = new Intent(MainActivity.this, ColorsActivity.class);
 
                 //Start the new activity
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //Find the View that shows the family category
+        //Find the View that shows the phrases category
         TextView phrases = (TextView) findViewById(R.id.phrases);
 
         //Set a clickListener on that View

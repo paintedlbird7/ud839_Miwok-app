@@ -1,7 +1,10 @@
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -9,6 +12,8 @@ import java.util.ArrayList;
 public class PhrasesActivity extends AppCompatActivity {
 
     private int imageResourceId;
+    private MediaPlayer mMediaPlayer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,13 +22,13 @@ public class PhrasesActivity extends AppCompatActivity {
 
         // Create an array of words
         // words.add("one");
-        ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word("What is your name?", "innә oyaase'nә",imageResourceId));
-        words.add(new Word("My name is..", "michәksәs?", imageResourceId));
-        words.add(new Word("I’m feeling good.", "kuchi achit", imageResourceId));
-        words.add(new Word("Are you coming?", "әәnәs'aa?", imageResourceId));
-        words.add(new Word("Let’s go", "yoowutis", imageResourceId));
+         words.add(new Word("What is your name?", "innә oyaase'nә", imageResourceId, R.raw.phrase_what_is_your_name));
+        words.add(new Word("My name is..", "michәksәs?", imageResourceId, R.raw.phrase_my_name_is));
+        words.add(new Word("I’m feeling good.", "kuchi achit", imageResourceId, R.raw.phrase_im_feeling_good));
+        words.add(new Word("Are you coming?", "әәnәs'aa?", imageResourceId, R.raw.phrase_are_you_coming));
+        words.add(new Word("Let’s go", "yoowutis", imageResourceId, R.raw.phrase_lets_go));
 
 
         // Create a new {@link TextView}
@@ -44,6 +49,15 @@ public class PhrasesActivity extends AppCompatActivity {
         // {@link ListView} will display
 
         listView.setAdapter(itemsAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, R.raw.phrase_what_is_your_name);
+                mMediaPlayer.start(); // no need  to call prepare(); create() does that for you
+            }
+
+        });
 
     }
 
