@@ -21,7 +21,7 @@ public class FamilyActivity extends AppCompatActivity {
 
         // Create an array of words
         // words.add("one");
-        ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("father", "әpә", R.drawable.family_mother, R.raw.family_mother));
         words.add(new Word("mother", "әṭa", R.drawable.family_father, R.raw.family_father));
         words.add(new Word("son", "angsi", R.drawable.family_daughter, R.raw.family_daughter));
@@ -51,7 +51,8 @@ public class FamilyActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mMediaPlayer = MediaPlayer.create(FamilyActivity.this, R.raw.family_mother);
+                Word word = words.get(position);
+                mMediaPlayer = MediaPlayer.create(FamilyActivity.this, word.getmAudioResourceId());
                 mMediaPlayer.start(); // no need  to call prepare(); create() does that for you
             }
 
