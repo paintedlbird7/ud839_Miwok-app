@@ -1,5 +1,8 @@
 package com.example.android.miwok;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,25 +17,52 @@ import static com.example.android.miwok.R.layout;
 
 public class NumbersActivity extends AppCompatActivity {
 
-    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener(){
-
-    @Override
-    public void onCompletion(MediaPlayer mp) {
-        releaseMediaPlayer();
-    }
-
-};
-
-
     private Object android;
     private ListAdapter adapter;
     private ListAdapter itemsAdapter;
+
     private MediaPlayer mMediaPlayer;
+    private AudioManager mAudioManager;
+
+    AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener =
+            new AudioManager.OnAudioFocusChangeListener() {
+
+                public void onAudioFocusChange(int focusChange) {
+                    int AudioManagerAUDIOFOCUS_LOSS_TRANSIENT = 0;
+                    if (focusChange == AudioManagerAUDIOFOCUS_LOSS_TRANSIENT ||
+                            focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
+                        mMediaPlayer.pause();
+                        mMediaPlayer.seekTo(0);
+                    } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
+                        // Resume playback
+                        mMediaPlayer.start();
+                    } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
+                        // The AUDIOFOCUS_LOSS case we've lost audio focus and
+                        //stop playback and cleanup
+                        releaseMediaPlayer();
+                    }
+
+                    }
+                };
+
+
+    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener(){
+
+        @Override
+        public void onCompletion(MediaPlayer mp) {
+            releaseMediaPlayer();
+        }
+
+    };
+    private ComponentName RemoteControlReceiver;
+    private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.word_list);
+
+        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         // Create an array of words
         // words.add("one");
@@ -66,19 +96,37 @@ public class NumbersActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 Word word = words.get(position);
+
                 releaseMediaPlayer();
-                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, word.getmAudioResourceId());
-                mMediaPlayer.start(); // no need  to call prepare(); create() does that for you
 
-                mMediaPlayer.setOnCompletionListener(mCompletionListener);
+                //Request audio focus for playback
+                int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
+                        // Use the music stream.
+                        AudioManager.STREAM_MUSIC,
+                        // Request permanent focus.
+                        AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+
+                if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                    mAudioManager.registerMediaButtonEventReceiver(RemoteControlReceiver);
+                    // We have an audio focus now
+
+                    // Create and setup the {@link MediaPlayer) for the audio resource associated
+                    // with the current word
+                    mMediaPlayer = MediaPlayer.create(NumbersActivity.this, word.getmAudioResourceId());
+                    // Start the audio file
+                    mMediaPlayer.start(); // no need  to call prepare(); create() does that for you
+
+                    mMediaPlayer.setOnCompletionListener(mCompletionListener);
+                }
+
             }
-
         });
     }
 
         @Override
-        protected void onStop() {
+        protected void onStop(){
             super.onStop();
             releaseMediaPlayer();
         }
@@ -100,52 +148,10 @@ public class NumbersActivity extends AppCompatActivity {
             // setting the media player to null is an easy way to tell that the media player
             // is not configured to play an audio file at the moment.
             mMediaPlayer = null;
+
+            mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListner);
         }
     }
 
 }
-
-
-        // For Loop: Find the root view of the whole layout
-//        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
-//
-//        for(int index = 0; index < words.size(); index++)
-//        {
-//            // Create a new TextView
-//            TextView wordView = new TextView(this);
-//
-//            // Set the text to be word at the current index
-//            wordView.setText(words.get(index));
-//
-//            // Add this TextView as another child to the root view of this layout
-//            rootView.addView(wordView);
-//        }
-//    }
-//}
-
-
-
-
-// While Loop:  Create a variable to keep track of the current index position
-//        int index = 0;
-//        while(index<words.size()){
-//            // Create a new {@link TextView} that displayed the word at
-//            // and add the View as a child to the rootView
-//
-//            TextView wordView = new TextView(this);
-//            wordView.setText(words.get(0));
-//            rootView.addView(wordView);
-//
-//            //Update counter variable
-//            index++; //index = index + 1
-//        }
-
-
-//        TextView wordView2 = new TextView(this);
-//        wordView2.setText(words.get(1));
-//        rootView.addView(wordView2);
-//
-//        TextView wordView3 = new TextView(this);
-//        wordView3.setText(words.get(2));
-//        rootView.addView(wordView3);
 
