@@ -22,9 +22,11 @@ public class Word {
 
     // Audio resource ID for the word
     private int mAudioResourceId;
+
     /**
      * Create a new Word object.
-     *  @param defaultTranslation is the word in a language that the user is already familiar with
+     *
+     * @param defaultTranslation is the word in a language that the user is already familiar with
      *                           (such as English)
      * @param miwokTranslation   is the word in a language that the user is already familiar with
      * @param imageResourceId
@@ -61,9 +63,15 @@ public class Word {
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
 
-    public int getmAudioResourceId() {return mAudioResourceId;}
+    public int getmAudioResourceId() {
+        return mAudioResourceId;
+    }
 
+    public int getAudioResourceId() {
+        return mAudioResourceId;
+    }
 }
+
 
 
 
