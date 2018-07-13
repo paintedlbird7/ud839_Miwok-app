@@ -157,12 +157,8 @@ public class ColorsFragment extends Fragment {
         return rootView;
 
 }
-
-
-
-
         @Override
-    protected void onStop() {
+    protected void onStop(){
         super.onStop();
         releaseMediaPlayer();
     }
