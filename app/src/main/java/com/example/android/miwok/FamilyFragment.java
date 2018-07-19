@@ -1,4 +1,11 @@
+//TODO: fix the audio sequence of words apa, eta, sounds
+
+
 package com.example.android.miwok;
+
+/**
+ * Created by rosaperez on 7/19/18.
+ */
 
 
 import android.content.Context;
@@ -17,7 +24,7 @@ import java.util.ArrayList;
 /**
  * {@link Fragment} that displays a list of number vocabulary words.
  */
-public class ColorsFragment extends Fragment {
+public class FamilyFragment extends Fragment {
 
     /** Handles playback of all the sound files */
     private MediaPlayer mMediaPlayer;
@@ -65,8 +72,9 @@ public class ColorsFragment extends Fragment {
             releaseMediaPlayer();
         }
     };
+    private int imageResourceId;
 
-    public ColorsFragment() {
+    public FamilyFragment() {
         // Required empty public constructor
     }
 
@@ -80,11 +88,11 @@ public class ColorsFragment extends Fragment {
 
         // Create a list of words
         final ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("red", "wetetti", R.drawable.color_red, R.raw.color_red));
-        words.add(new Word("black", "kululli",  R.drawable.color_black, R.raw.color_black));
-        words.add(new Word("white", "kelelli",  R.drawable.color_brown, R.raw.color_white));
-        words.add(new Word("green", "chokokki",  R.drawable.color_white, R.raw.color_green));
-        words.add(new Word("brown", "takaakki",  R.drawable.color_gray, R.raw.color_brown));
+        words.add(new Word("father", "әpә", R.drawable.family_mother, R.raw.family_mother));
+        words.add(new Word("mother", "әṭa", R.drawable.family_father, R.raw.family_father));
+        words.add(new Word("son", "angsi", R.drawable.family_daughter, R.raw.family_daughter));
+        words.add(new Word("daughter", "tune", R.drawable.family_son, R.raw.family_son));
+        words.add(new Word("grandmother", "ama", R.drawable.family_older_sister, R.raw.family_older_sister));
 
 
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
@@ -167,3 +175,4 @@ public class ColorsFragment extends Fragment {
         }
     }
 }
+

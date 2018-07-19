@@ -1,5 +1,8 @@
 package com.example.android.miwok;
 
+/**
+ * Created by rosaperez on 7/19/18.
+ */
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -17,7 +20,7 @@ import java.util.ArrayList;
 /**
  * {@link Fragment} that displays a list of number vocabulary words.
  */
-public class ColorsFragment extends Fragment {
+public class PhrasesFragment extends Fragment {
 
     /** Handles playback of all the sound files */
     private MediaPlayer mMediaPlayer;
@@ -65,8 +68,9 @@ public class ColorsFragment extends Fragment {
             releaseMediaPlayer();
         }
     };
+    private int imageResourceId;
 
-    public ColorsFragment() {
+    public PhrasesFragment() {
         // Required empty public constructor
     }
 
@@ -80,11 +84,11 @@ public class ColorsFragment extends Fragment {
 
         // Create a list of words
         final ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("red", "wetetti", R.drawable.color_red, R.raw.color_red));
-        words.add(new Word("black", "kululli",  R.drawable.color_black, R.raw.color_black));
-        words.add(new Word("white", "kelelli",  R.drawable.color_brown, R.raw.color_white));
-        words.add(new Word("green", "chokokki",  R.drawable.color_white, R.raw.color_green));
-        words.add(new Word("brown", "takaakki",  R.drawable.color_gray, R.raw.color_brown));
+        words.add(new Word("What is your name?", "innә oyaase'nә", imageResourceId, R.raw.phrase_what_is_your_name));
+        words.add(new Word("My name is..", "michәksәs?", imageResourceId, R.raw.phrase_my_name_is));
+        words.add(new Word("I’m feeling good.", "kuchi achit", imageResourceId, R.raw.phrase_im_feeling_good));
+        words.add(new Word("Are you coming?", "әәnәs'aa?", imageResourceId, R.raw.phrase_are_you_coming));
+        words.add(new Word("Let’s go", "yoowutis", imageResourceId, R.raw.phrase_lets_go));
 
 
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
